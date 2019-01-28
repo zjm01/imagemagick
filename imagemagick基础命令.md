@@ -1,5 +1,7 @@
 # 安装
-cnpm install --save imageMagick gm  （我用npm会报错，安装不成功）
+brew install imagemagick    （macOS下）   
+
+cnpm install --save imageMagick gm  （我用npm会报错，安装不成功）(node中)  
 ## imageMagick有愈多命令行来操作图片，也留出来了许多编程接口，比如java,php，node等  
 # 命令行
 ## 转换图片格式
