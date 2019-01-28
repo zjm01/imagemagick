@@ -8,29 +8,29 @@ magick rose.jpg rose.png（将jpg格式转化为png；也可以是pdf转图片�
 magick rose.jpg -resize 50% rose.png  
 
 # node中使用
-var fs, gm;
- gm = require('gm');
+var fs, gm;  
+ gm = require('gm');  
 
- gm('../images/cat.jpg').options({
-   imageMagick: true
- }).resize(130, 105).write('../images/after.jpg', function(err) {
-   if (err) {
-     return console.error(err);
+ gm('../images/cat.jpg').options({  
+   imageMagick: true   
+ }).resize(130, 105).write('../images/after.jpg', function(err) {  
+   if (err) {  
+     return console.error(err);   
+   }  
+   return console.log('success');  
+ });   
+// imageMagickOptions.appPath = config.dependencies.ImageMagick   
+// imageMagick = gm.subClass(imageMagickOptions);   
+// imageMagick("../images/a.pdf").command("convert").in("-density", "500").write("../images/b.png", function(err){  
+//         if (err) {  
+//             throw err;  
+//         }  
+// });   
+ gm('../images/lanting.pdf').options({   
+   imageMagick: true   
+ }).command("convert").in("-density", "500").write('../images/lanting1.jpg', function(err) {   
+   if (err) {   
+     return console.error(err);   
    }
-   return console.log('success');
- });
-// imageMagickOptions.appPath = config.dependencies.ImageMagick
-// imageMagick = gm.subClass(imageMagickOptions);
-// imageMagick("../images/a.pdf").command("convert").in("-density", "500").write("../images/b.png", function(err){
-//         if (err) {
-//             throw err;
-//         }
-// });
- gm('../images/lanting.pdf').options({
-   imageMagick: true
- }).command("convert").in("-density", "500").write('../images/lanting1.jpg', function(err) {
-   if (err) {
-     return console.error(err);
-   }
-   return console.log('success');
- });
+   return console.log('success');   
+ });  
