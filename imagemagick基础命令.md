@@ -10,7 +10,7 @@ magick rose.jpg -resize 50% rose.png
 # node中使用
 var fs, gm;  
  gm = require('gm');  
-
+//  改变图片大小   
  gm('../images/cat.jpg').options({  
    imageMagick: true   
  }).resize(130, 105).write('../images/after.jpg', function(err) {  
@@ -18,14 +18,8 @@ var fs, gm;
      return console.error(err);   
    }  
    return console.log('success');  
- });   
-// imageMagickOptions.appPath = config.dependencies.ImageMagick   
-// imageMagick = gm.subClass(imageMagickOptions);   
-// imageMagick("../images/a.pdf").command("convert").in("-density", "500").write("../images/b.png", function(err){  
-//         if (err) {  
-//             throw err;  
-//         }  
-// });   
+ });          
+// 将pdf格式转化为图片     
  gm('../images/lanting.pdf').options({   
    imageMagick: true   
  }).command("convert").in("-density", "500").write('../images/lanting1.jpg', function(err) {   
